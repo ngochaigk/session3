@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Xe dap</title>
+</head>
+<body>
+    <form method="POST">
+        <label>Model</label> 
+        <input type="text" name="model" value="{{ data.model }}"> <br>
+        <label>Daily fee (VND)</label> 
+        <input type="text" name="fee" value="{{ data.fee }}"><br>
+        <label>Image</label> 
+        <input type="text" name="image" value="{{ data.image }}"><br> 
+        <label>Year</label> 
+        <input type="text" name="year" value="{{ data.year }}"><br> 
+        <input type="submit" name="Submit"><br> 
+    </form>
+    <table border="1">
+        <tr>
+            <th>Model</th>
+            <th>Daily fee</th>
+            <th>Image</th>
+            <th>Year</th>
+        </tr>
+        {% for v in data %}
+        <tr>
+            <td>{{ v.model }}</td>
+            <td>{{ v.fee }}</td>
+            <td>{{ v.image }}</td>
+            <td>{{ v.year }}</td>
+        </tr>
+        {% endfor %}
+    </table>
+</body>
+</html>
